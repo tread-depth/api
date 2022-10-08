@@ -11,6 +11,7 @@ dotenv.config();
 
 import util from './util/index';
 import user from './routes/user';
+import fleet from './routes/fleet';
 import auth from './services/auth';
 auth(passport);
 
@@ -49,6 +50,7 @@ app.use(passport.session());
 // Routes
 // ------------------------
 app.use('/api/user', user);
+app.use('/api/fleet', fleet);
 
 // ---
 // Error handling
