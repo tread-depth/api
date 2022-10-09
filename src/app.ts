@@ -10,9 +10,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import util from './util/index';
+import auth from './services/auth';
 import user from './routes/user';
 import fleet from './routes/fleet';
-import auth from './services/auth';
+import truck from './routes/truck';
 auth(passport);
 
 const app = express();
@@ -51,6 +52,7 @@ app.use(passport.session());
 // ------------------------
 app.use('/api/user', user);
 app.use('/api/fleet', fleet);
+app.use('/api/truck', truck);
 
 // ---
 // Error handling

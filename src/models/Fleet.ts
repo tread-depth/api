@@ -1,8 +1,10 @@
 import Model from '../db/model';
+import Truck from './Truck';
 
-interface Fleet {
+export interface IFleet {
     id: string;
     name: string;
+    trucks: Truck[];
 }
 
 class Fleet extends Model {

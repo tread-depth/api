@@ -11,6 +11,14 @@ const create = async (name: string) => {
     return fleet;
 };
 
+const get = async (id: string) => {
+    util.logger.debug('/services/fleets/get');
+
+    const fleet = await Fleet.query().findById(id);
+
+    return fleet;
+};
+
 const getAll = async () => {
     util.logger.debug('/services/fleets/getAll');
 
@@ -21,5 +29,6 @@ const getAll = async () => {
 
 export default {
     create,
+    get,
     getAll,
 };
